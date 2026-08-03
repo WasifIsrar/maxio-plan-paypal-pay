@@ -1,8 +1,6 @@
 # Dependencies / vendor build
 bin/
 obj/
-vendor/**/bin/
-vendor/**/obj/
 
 # Environment / secrets
 .env
