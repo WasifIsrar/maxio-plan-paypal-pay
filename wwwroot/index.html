@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Billing Desk — Maxio + PayPal (C#)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+    <main class="shell">
+      <header class="brand">
+        <p class="eyebrow">Maxio × PayPal · C#</p>
+        <h1>Billing Desk</h1>
+        <p class="lede">
+          Create a customer and plan in Maxio, generate an invoice, pay with
+          PayPal, then see paid status and the next billing date.
+        </p>
+        <p id="modeBadge" class="badge">Checking credentials…</p>
+      </header>
+
+      <section class="panel">
+        <form id="checkoutForm">
+          <div class="grid">
+            <label>
+              First name
+              <input name="firstName" required value="Ada" />
+            </label>
+            <label>
+              Last name
+              <input name="lastName" required value="Lovelace" />
+            </label>
+          </div>
+          <label>
+            Email
+            <input name="email" type="email" required value="ada@example.com" />
+          </label>
+          <label>
+            Organization
+            <input name="organization" value="Analytical Engines" />
+          </label>
+          <div class="grid">
+            <label>
+              Plan name
+              <input name="planName" value="Starter Plan" />
+            </label>
+            <label>
+              Price (cents)
+              <input name="priceCents" type="number" min="100" value="2900" />
+            </label>
+          </div>
+          <button type="submit" id="startBtn">
+            Create invoice &amp; pay with PayPal
+          </button>
+          <button type="button" id="errorBtn" class="secondary">
+            Show typed Maxio 422 error
+          </button>
+        </form>
+        <pre id="log" class="log" hidden></pre>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="vendor\maxio-advanced-billing-csharp-sdk\MaxioAdvancedBilling.csproj" />
+    <ProjectReference Include="vendor\paypal-csharp-sdk\Paypal.csproj" />
+  </ItemGroup>
+
+  <!-- Vendor SDKs are project-referenced; do not compile their sources into this app. -->
+  <ItemGroup>
+    <Compile Remove="vendor\**" />
+    <Content Remove="vendor\**" />
+    <EmbeddedResource Remove="vendor\**" />
+    <None Remove="vendor\**" />
+    <None Include="vendor\**" Exclude="vendor\**\bin\**;vendor\**\obj\**" />
+  </ItemGroup>
+
+</Project>
